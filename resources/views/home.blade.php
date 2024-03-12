@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme='dark'>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    @vite('resources/js/app.js')
+@extends('layouts.layout')
 
-    <!-- link to bs css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+@section('main')
+<main class="p-3">
+    <ol>
+        @foreach($users as $element)
+        <li>Mi chiamo: {{ $element['first-name']}} {{ $element['last-name'] }}</li>
+        @endforeach
+    </ol>
 
-</head>
-<body>
-    
-    
-
-    <!-- link to bs js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-</body>
-</html>
+</main>
+@endsection
